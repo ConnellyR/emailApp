@@ -1,1 +1,11 @@
 
+{%extends "layout.html"%}
+{%set active_page="page1"%}
+
+  {% block title%}page 1{%endblock%}
+
+    {% block content%}
+
+      <h1>page 1</h1>
+
+    {%endblock%}
