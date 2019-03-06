@@ -16,19 +16,6 @@
  </head>
   <body>
    
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href=".">My Website</a>
-        </div>
-          <ul class="nav navbar-nav">
-            <li {% if active_page == "home" %} class="active" {% endif %}><a href=".">home</a></li>
-            <li {% if active_page == "page1" %} class="active"{% endif %}><a href="/page1">page1 </a></li> <!-- p1 will show up in the url -->
-            <li {% if active_page == "page2" %} class="active"{% endif %}><a href="/page2">page1 </a></li>
-            <li {% if active_page == "page 3" %} class="active"{% endif %}><a href="/page3">page1</a></li>
-          </ul>
-      </div>
-    </nav>
     
 
   {% block content %}{% endblock %}</div>
