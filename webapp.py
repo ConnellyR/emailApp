@@ -19,16 +19,16 @@ def renderPage1():
     
 @app.route('/page2',methods=["POST","GET"])
 def renderCheckout():
-    if "info" not in session:
-        return redirect(url_for("renderPage1"))
+   # if "info" not in session:
+        #return redirect(url_for("renderPage1"))
     return render_template("page2.html")
 
 @app.route('/page3',methods=["POST","GET"])
 def renderPage3():
-    if "info" not in session:
-        return redirect(url_for("renderPage3"))
-    items = session["itemsincart"]
-    session["itemsincart"] = 0
+   # if "info" not in session:
+      #  return redirect(url_for("renderPage3"))
+    #items = session["itemsincart"]
+    #session["itemsincart"] = 0
     return render_template("page3.html")
     
 if __name__=="__main__":
