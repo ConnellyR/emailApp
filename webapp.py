@@ -32,7 +32,8 @@ def renderPage3():
     if "pg2data" not in session:
         return redirect(url_for("renderPage2"))
 
-    
+    print(session["pg1data"])
+    print(session["pg2data"])
     return render_template("page3.html")
     
 if __name__=="__main__":
