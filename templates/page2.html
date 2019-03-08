@@ -1,0 +1,22 @@
+
+{%extends "layout.html"%}
+{%set active_page="page2"%}
+
+  {% block title%}page 2{%endblock%}
+
+    {% block content%}
+
+      <h1>page 2</h1>
+    
+    <p>Genre of Book</p>
+      <br>
+      
+      <br>
+   
+    
+  
+	<form action="/page3" method="POST">
+        <input type="text" name="genre">
+        <button type="submit"class="btn btn-outline-success btn-lg" >Finish</button>
+	</form>
+    {%endblock%}
