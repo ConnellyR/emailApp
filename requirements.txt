@@ -2,6 +2,7 @@ decorator
 Flask
 Flask-SQLAlchemy
 Flask-WTF
+Flask-Mail 
 gunicorn
 itsdangerous
 Jinja2
