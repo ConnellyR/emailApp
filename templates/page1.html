@@ -11,7 +11,10 @@
     <br><br>
         
     <form action="/page2" method="POST">
-        <input type="text" name="pages">
+    <div class="form-group" >
+    <label for="p1"> Number of Pages </label>
+        <input class="form-control" type="text" name="pages" id="p1">
+    </div>
         <button type="submit"class="btn btn-outline-success btn-lg" >Next</button>
     </form>
     {%endblock%}

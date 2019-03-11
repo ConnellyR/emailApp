@@ -2,8 +2,10 @@ import os
 from flask import Flask, url_for, render_template, request
 from flask import redirect
 from flask import session
+from flask_mail import Mail
 
 app = Flask(__name__)
+mail = Mail(app)
 
 app.secret_key=os.environ["SECRET_KEY"];   
 pg1data = 0
@@ -35,6 +37,6 @@ def renderPage3():
     print(session["pg1data"])
     print(session["pg2data"])
     return render_template("page3.html")
-    
+    # put info in csv then email out
 if __name__=="__main__":
     app.run(debug=True)
