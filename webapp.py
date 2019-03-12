@@ -2,18 +2,28 @@ import os
 from flask import Flask, url_for, render_template, request
 from flask import redirect
 from flask import session
-from flask_mail import Mail
+from flask_mail import Mail,Message
 
 app = Flask(__name__)
 mail = Mail(app)
 
-app.secret_key=os.environ["SECRET_KEY"];   
-pg1data = 0
-pg2data = ""
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'connellyrogers@gmail.com'
+app.config['MAIL_PASSWORD'] = os.environ["Pass"]
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
 
+
+
+
+
+
+app.secret_key=os.environ["SECRET_KEY"]
 
 @app.route('/', methods=["POST","GET"])
-def renderHome():   
+def renderHome():  
+
     return render_template("home.html")
     
 
@@ -33,10 +43,20 @@ def renderPage3():
     session["pg2data"] = request.form["genre"]
     if "pg2data" not in session:
         return redirect(url_for("renderPage2"))
-
+        
     print(session["pg1data"])
     print(session["pg2data"])
+    
+    msg = Message('Hello', sender = 'connellyrogers@gmail.com', recipients = ['connellyrogers@gmail.com'])
+    msg.attach("data.csv","text/csv","pg1data,pg2data\n\"%s,%s"%(session["pg1data"],session["pg2data"]))
+   
+   mail.send(msg)
+    
     return render_template("page3.html")
     # put info in csv then email out
+    
+   
+    
+    
 if __name__=="__main__":
     app.run(debug=True)
