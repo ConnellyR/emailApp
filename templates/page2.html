@@ -20,6 +20,23 @@
     <label for="p2"> Name of Genre </label>
        <input class="form-control" type="text" name="genre" id="p2">
            </div>
+                
+        <div id="Q" class="form-group">
+            <label for="Q">  Reading Every Day ? </label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="readDaily" id="RadiosYes" value="yes" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                     Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="readDaily" id="RadiosNo" value="no">
+                <label class="form-check-label" for="exampleRadios2">
+                    No
+                </label>
+            </div>
+        </div> 
+           
         <button type="submit"class="btn btn-outline-success btn-lg" >Finish</button>
 	</form>
     {%endblock%}
