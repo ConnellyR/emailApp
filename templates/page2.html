@@ -39,5 +39,8 @@
            
         <button type="submit"class="btn btn-outline-success btn-lg" >Finish</button>
 	</form>
-	<a href="/page2" type="submit"class="btn btn-outline-success btn-lg" >Previous</a> 
+    
+    <form action="/page1?back=true" method="POST">
+        <button id="back" type="submit"class="btn btn-outline-success btn-lg" >Previous</button> 
+    </form>
     {%endblock%}
